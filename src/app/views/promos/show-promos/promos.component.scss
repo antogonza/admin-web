@@ -1,0 +1,127 @@
+.discounts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.discount-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.discount-header {
+    background: #007bff;
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #0056b3;
+}
+
+.discount-code {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.discount-type {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.discount-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.discount-details p {
+    margin: 5px 0;
+}
+
+.discount-footer {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.active {
+    color: #28a745; // Verde para activo
+}
+
+.inactive {
+    color: #dc3545; // Rojo para inactivo
+}
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    /* Ajusta la distancia desde el fondo según lo necesites */
+    right: 20px;
+    /* Ajusta la distancia desde el lado derecho según lo necesites */
+    width: 60px;
+    /* Tamaño del botón */
+    height: 60px;
+    /* Tamaño del botón */
+    border-radius: 50%;
+    /* Hace que el botón sea redondo */
+    background-color: #007bff;
+    /* Color de fondo del botón, puedes cambiarlo según tu diseño */
+    color: white;
+    /* Color del texto */
+    font-size: 24px;
+    /* Tamaño del texto */
+    border: none;
+    /* Sin borde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra opcional para darle un efecto de flotación */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.fab:hover {
+    background-color: #0056b3;
+    /* Color de fondo en hover */
+}
+
+.fab:focus {
+    outline: none;
+    /* Elimina el contorno de enfoque si no es necesario */
+}
+
+.discount-wrapper {
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+}

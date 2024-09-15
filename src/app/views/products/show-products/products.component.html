@@ -1,0 +1,27 @@
+<div class="products-wrapper">
+    <div class="products">
+        <div *ngFor="let category of getCategoryNames()">
+            <h2>{{ category }}</h2>
+            <hr>
+            <div class="products-container">
+                <div class="product-card" *ngFor="let product of categories[category]"
+                    (click)="onEditProduct(product.id)">
+                    <img [src]="product.photo ?? 'https://i.imgur.com/TdfYhhp.png'" alt="{{ product.name }}"
+                        class="product-image" />
+                    <div class="product-details">
+                        <h3 class="product-name">{{ product.name }}</h3>
+                        <p class="product-ingredients">{{ product.ingredients }}</p>
+                        <p class="product-price">
+                            {{ getPriceString(product) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <button class="fab" (click)="onAddProduct()">
+        +
+    </button>
+</div>

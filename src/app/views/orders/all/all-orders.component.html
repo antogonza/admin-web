@@ -1,0 +1,8 @@
+<div class="orders-wrapper">
+    <h1>Pedidos Completados</h1>
+    <hr>
+    <div *ngFor="let order of orders">
+        <app-orders [type]="'completed'" [order]="order"></app-orders>
+    </div>
+    <p *ngIf="orders.length === 0" style="text-align: center;">No hay pedidos</p>
+</div>

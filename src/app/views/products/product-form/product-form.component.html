@@ -1,0 +1,66 @@
+<div class="product-form-container">
+    <h1>{{ isEditMode ? 'Editar Producto' : 'Crear Producto' }}</h1>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        <!-- Nombre del Producto -->
+        <div class="form-group">
+            <label for="name">Nombre del Producto:</label>
+            <input id="name" formControlName="name" type="text" placeholder="Nombre del Producto" required />
+        </div>
+
+        <!-- Ingredientes -->
+        <div class="form-group">
+            <label for="ingredients">Ingredientes:</label>
+            <textarea id="ingredients" formControlName="ingredients" rows="3" placeholder="Lista de ingredientes"
+                required></textarea>
+        </div>
+
+        <!-- Tipo de Producto (Select) -->
+        <div class="form-group">
+            <label for="type">Tipo de Producto:</label>
+            <select id="type" formControlName="type" required>
+                <option value="">Selecciona un tipo</option>
+                <option *ngFor="let option of productTypes" [value]="option">{{ option }}</option>
+            </select>
+        </div>
+
+        <!-- Precios (Condicionales) -->
+        <div class="form-group" *ngIf="productForm.get('type')?.value === 'PIZZA'">
+            <label for="priceSmall">Precio Pequeña:</label>
+            <input id="priceSmall" formControlName="priceSmall" type="number" min="0" step="0.01"
+                placeholder="Precio Pequeño" />
+        </div>
+
+        <div class="form-group" *ngIf="productForm.get('type')?.value === 'PIZZA'">
+            <label for="priceMedium">Precio Mediana:</label>
+            <input id="priceMedium" formControlName="priceMedium" type="number" min="0" step="0.01"
+                placeholder="Precio Mediano" />
+        </div>
+
+        <div class="form-group">
+            <label for="priceBig">
+                {{ productForm.get('type')?.value === 'PIZZA' ? 'Precio Grande' : 'Precio' }}:
+            </label>
+            <input id="priceBig" formControlName="priceBig" type="number" min="0" step="0.01"
+                placeholder="{{ productForm.get('type')?.value === 'PIZZA' ? 'Precio Grande' : 'Precio' }}" required />
+        </div>
+
+        <!-- Descuento -->
+        <div class="form-group">
+            <label for="discount">Descuento (%):</label>
+            <input id="discount" formControlName="discount" type="number" min="0" max="100" step="0.01"
+                placeholder="Descuento" />
+        </div>
+
+        <!-- Foto del Producto -->
+        <div class="form-group">
+            <label for="photo">Foto del Producto:</label>
+            <input id="photo" formControlName="photo" type="text" placeholder="URL de la Foto" />
+        </div>
+
+        <!-- Botón para guardar -->
+        <button type="submit" class="btn btn-primary">
+            {{ isEditMode ? 'Actualizar Producto' : 'Crear Producto' }}
+        </button>
+    </form>
+</div>

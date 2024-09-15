@@ -1,0 +1,22 @@
+* {
+    background-color: #fff;
+}
+
+::ng-deep .mat-tab-label {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+::ng-deep .mat-tab-label-active {
+    color: #ff0000;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: #007bff;
+}
+
+.orders-wrapper {
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+}

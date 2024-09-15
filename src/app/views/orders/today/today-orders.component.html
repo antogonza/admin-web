@@ -1,0 +1,15 @@
+<div class="orders-wrapper">
+    <h1>Pedidos de Hoy</h1>
+    <hr>
+    <mat-tab-group (selectedIndexChange)=" onTabChange($event)">
+        <mat-tab label="Pendientes">
+            <app-pending-view></app-pending-view>
+        </mat-tab>
+        <mat-tab label="Cocina">
+            <app-kitchen-view></app-kitchen-view>
+        </mat-tab>
+        <mat-tab label="En Reparto">
+            <app-delivery-view></app-delivery-view>
+        </mat-tab>
+    </mat-tab-group>
+</div>

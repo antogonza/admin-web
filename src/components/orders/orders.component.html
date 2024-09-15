@@ -1,0 +1,33 @@
+<div class="order-card">
+    <div class="order-card-body">
+        <p class="order-address" *ngIf="!order?.pickUp">{{ order?.addressId }}</p>
+        <p class="order-address" *ngIf="order?.pickUp">Recogida en Local</p>
+        <p class="order-info"><strong>Total Productos:</strong> {{ order?.totalItems }}</p>
+        <p class="order-info"><strong>Total:</strong> {{ order?.totalAmmount! | decimalFormat }}€</p>
+        <p class="order-info"><strong>Hora de {{order?.pickUp ? 'Recogida' : 'Entrega'}}:</strong> {{
+            order?.scheduleDelivery}}</p>
+    </div>
+    <div class="order-card-footer">
+        <button *ngIf="type === 'pending'" class="btn btn-green" (click)="changeOrderStatus(order?.id!, 'ACCEPTED')">
+            Aceptar
+        </button>
+        <button *ngIf="type === 'pending'" class="btn btn-red" (click)="changeOrderStatus(order?.id!, 'CANCELLED')">
+            Cancelar
+        </button>
+        <button *ngIf="type === 'kitchen'" class="btn btn-green">
+            Imprimir
+        </button>
+        <button *ngIf="type === 'kitchen'" class="btn btn-red" (click)="changeOrderStatus(order?.id!, 'DELIVERING')">
+            Enviar
+        </button>
+        <button *ngIf="type === 'delivery'" class="btn btn-green" (click)="changeOrderStatus(order?.id!, 'COMPLETED')">
+            Completar
+        </button>
+        <button *ngIf="type === 'delivery'" class="btn btn-red" (click)="changeOrderStatus(order?.id!, 'CANCELLED')">
+            Cancelar
+        </button>
+        <button *ngIf="type === 'local'" class="btn btn-red btn-center">
+            Traspasar
+        </button>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="orders-wrapper">
+    <h1>Otros locales</h1>
+    <hr>
+    <div *ngFor="let order of orders">
+        <app-orders [type]="'local'" [order]="order"></app-orders>
+    </div>
+</div>

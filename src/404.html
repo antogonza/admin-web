@@ -1,0 +1,8 @@
+<script type="text/javascript">
+    // Redirige a la index.html para cualquier ruta 404 en GitHub Pages
+    var target = window.location.pathname;
+    if (!target.startsWith('/admin-web')) {
+        target = '/admin-web/';
+    }
+    window.location.replace(target);
+</script>

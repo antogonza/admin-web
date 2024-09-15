@@ -1,0 +1,113 @@
+.products {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los productos se distribuyan en varias filas si es necesario */
+    gap: 16px;
+    /* Espacio entre las tarjetas */
+    justify-content: space-evenly;
+    /* Distribuye los productos de manera uniforme en la fila */
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.product-card {
+    flex: 1 1 calc(25% - 32px);
+    /* Ocupa un 25% del contenedor menos el espacio de margen */
+    max-width: 300px;
+    /* Limita el tamaño máximo de la tarjeta */
+    min-width: 200px;
+    /* Asegura que la tarjeta no sea demasiado pequeña */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        /* Sombra un poco más pronunciada al hacer hover */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-details {
+    margin-top: 16px;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-ingredients {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    /* Ajusta la distancia desde el fondo según lo necesites */
+    right: 20px;
+    /* Ajusta la distancia desde el lado derecho según lo necesites */
+    width: 60px;
+    /* Tamaño del botón */
+    height: 60px;
+    /* Tamaño del botón */
+    border-radius: 50%;
+    /* Hace que el botón sea redondo */
+    background-color: #007bff;
+    /* Color de fondo del botón, puedes cambiarlo según tu diseño */
+    color: white;
+    /* Color del texto */
+    font-size: 24px;
+    /* Tamaño del texto */
+    border: none;
+    /* Sin borde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra opcional para darle un efecto de flotación */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.fab:hover {
+    background-color: #0056b3;
+    /* Color de fondo en hover */
+}
+
+.fab:focus {
+    outline: none;
+    /* Elimina el contorno de enfoque si no es necesario */
+}
+
+.products-wrapper {
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+}

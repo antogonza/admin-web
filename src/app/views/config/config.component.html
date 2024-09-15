@@ -1,0 +1,59 @@
+<div class="config-wrapper">
+    <h1>Configuración</h1>
+    <hr>
+    <div class="edit-local-container">
+        <form [formGroup]="localForm" (ngSubmit)="onSubmit()">
+            <!-- Desbloqueo de campos -->
+            <div class="form-group">
+                <label for="unlockPassword">Introduce la contraseña para desbloquear los campos</label>
+                <input type="password" id="unlockPassword" formControlName="unlockPassword" class="form-control" />
+                <button type="button" class="btn btn-secondary" (click)="unlockFields()">
+                    Desbloquear Campos
+                </button>
+            </div>
+            <div class="form-group">
+                <label for="deliveryPrice">Precio de Entrega</label>
+                <input type="number" id="deliveryPrice" formControlName="deliveryPrice" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="extraPrice">Precio Extra</label>
+                <input type="number" id="extraPrice" formControlName="extraPrice" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="freeShipping">Envío Gratuito desde</label>
+                <input type="number" id="freeShipping" formControlName="freeShipping" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="timePerProduct">Tiempo por Producto (min)</label>
+                <input type="number" id="timePerProduct" formControlName="timePerProduct" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryTime">Tiempo de Entrega</label>
+                <input type="number" id="deliveryTime" formControlName="deliveryTime" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="minDeliveryTime">Tiempo Mínimo de Entrega</label>
+                <input type="number" id="minDeliveryTime" formControlName="minDeliveryTime" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="firstDeliver">Primera Entrega del Día</label>
+                <input type="time" id="firstDeliver" formControlName="firstDeliver" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="localType">Tipo de Local (separado por comas)</label>
+                <input type="text" id="localType" formControlName="localType" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="localForm.invalid">
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
+</div>

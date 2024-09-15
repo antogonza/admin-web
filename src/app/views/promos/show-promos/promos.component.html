@@ -1,0 +1,29 @@
+<div class="discount-wrapper">
+    <h1>Códigos de descuento</h1>
+    <hr>
+    <div class="discounts-container">
+        <div *ngFor="let discount of discounts" class="discount-card">
+            <div class="discount-header">
+                <h2 class="discount-code">{{ discount.code }}</h2>
+                <span class="discount-type">{{ translateDiscountType(discount.type) }}</span>
+            </div>
+            <div class="discount-details">
+                <p><strong>Valor:</strong> {{ discount.value }}{{ discount.type === 'QUANTITY' ? '€' : '%' }}</p>
+                <p><strong>Estado:</strong>
+                    <span [ngClass]="{'active': discount.isActive, 'inactive': !discount.isActive}">
+                        {{ discount.isActive ? 'Activo' : 'Inactivo' }}
+                    </span>
+                </p>
+                <p><strong>Restante:</strong> {{ discount.remaining }} usos</p>
+                <p><strong>Caduca:</strong> {{ discount.expiresAt | date:'dd/MM/yyyy' }}</p>
+            </div>
+            <div class="discount-footer">
+                <button class="btn btn-edit" (click)="editDiscount(discount.id)">Editar</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="fab" (click)="onAddPromo()">
+        +
+    </button>
+</div>

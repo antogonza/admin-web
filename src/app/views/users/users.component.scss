@@ -1,0 +1,65 @@
+.users-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.user-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        /* Sombra un poco más pronunciada al hacer hover */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center; // Alinea el contenido verticalmente en el centro
+    padding: 15px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    word-wrap: break-word; // Asegura que el texto largo se ajuste
+}
+
+.user-email,
+.user-phone {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+    word-wrap: break-word; // Asegura que el texto largo se ajuste
+}
+
+.user-status {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-status.confirmed {
+    color: #28a745; // Verde para confirmado
+}
+
+.user-status.not-confirmed {
+    color: #dc3545; // Rojo para no confirmado
+}

@@ -1,0 +1,46 @@
+<div class="discount-form-container">
+    <h1>{{ isEditMode ? 'Editar Descuento' : 'Crear Descuento' }}</h1>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="discountForm">
+        <!-- Código del Descuento -->
+        <div class="form-group">
+            <label for="code">Código del Descuento:</label>
+            <input id="code" formControlName="code" type="text" placeholder="Código del Descuento" required />
+        </div>
+
+        <!-- Valor del Descuento -->
+        <div class="form-group">
+            <label for="value">Valor del Descuento:</label>
+            <input id="value" formControlName="value" type="number" min="0" max="100" step="0.01"
+                placeholder="Valor del Descuento" required />
+        </div>
+
+        <!-- Tipo de Descuento (Select) -->
+        <div class="form-group">
+            <label for="type">Tipo de Descuento:</label>
+            <select id="type" formControlName="type" required>
+                <option value="">Selecciona un tipo</option>
+                <option value="PERCENTAGE">Porcentaje</option>
+                <option value="QUANTITY">Cantidad</option>
+            </select>
+        </div>
+
+        <!-- Descuento Restante -->
+        <div class="form-group">
+            <label for="remaining">Restante:</label>
+            <input id="remaining" formControlName="remaining" type="number" min="0" step="1"
+                placeholder="Descuento Restante" required />
+        </div>
+
+        <!-- Fecha de Expiración -->
+        <div class="form-group">
+            <label for="expiresAt">Fecha de Expiración:</label>
+            <input id="expiresAt" formControlName="expiresAt" type="date" required />
+        </div>
+
+        <!-- Botón para guardar -->
+        <button type="submit" class="btn btn-primary">
+            {{ isEditMode ? 'Actualizar Descuento' : 'Crear Descuento' }}
+        </button>
+    </form>
+</div>
